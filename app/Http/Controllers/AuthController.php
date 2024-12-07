@@ -17,6 +17,10 @@ class AuthController extends Controller
         //     'password' => 'admin123'
         // ]);
 
+
+        //logout manual
+
+        // Auth::logout();
         if (!Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect('/login')->with('message', 'login failed');
         }
